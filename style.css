@@ -1,221 +1,202 @@
-body {
-    font-family: 'Poppins', sans-serif;
+:root {
+     --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"
+}
+
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
-section {
-    background-color: white;
+body {
+    font-family: var(--font);
+    color: #333;
+    background-color: #f9f9f9;
+    line-height: 1.7;
 }
 
-.hero {
-    background-color: #1c1d25;
-    height: 100vh;
-    color: white;
-    font-size: 40px;
+/* Header */
+.site-header {
+    background: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 80px;
-}
-
-nav {
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-ul {
-    display: flex;
-    list-style-type: none;
-    width: 500px;
-    justify-content: space-around;
-    font-size: 30px;
-}
-
-li {
-    /* width: 200px;  */
+.site-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #111;
     text-decoration: none;
 }
 
-h1 {
-    font-size: 90px;
-    margin: 0;
+.nav-links a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #555;
+    font-size: 0.95rem;
 }
 
-h2 {
-    font-size: 50px;
+.nav-links a:hover, .nav-links a.active {
+    color: #0066cc;
 }
 
-p {
-    margin: 0;
-    font-size: 30px;
-    font-weight: 300;
+/* Main Layout Grid */
+.main-layout {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
 }
 
-.subtext {
-    font-size: 15px;
-    font-weight:300;
+/* Sidebar Styles */
+.profile-sidebar {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    height: fit-content;
 }
 
-.hero-text {
-    margin-left: 80px;
-    margin-bottom: 200px;
+.profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 999px;
+    display: block;
+    border: 1px solid var(--border);
+    background: #fafafa;
 }
 
-.button {
-    width: 200px;
-    height: 55px;
-    border-radius: 30px;
-    background-color: coral;
+.profile-sidebar h1 {
+    font-size: 1.4rem;
     text-align: center;
-    padding-top: 5px;
-    margin-top: 20px;
-    font-size: 30px;
-    font-weight: 300;
+    margin-bottom: 0.5rem;
 }
 
-.hero-area {
+.profile-sidebar .role, 
+.profile-sidebar .institution, 
+.profile-sidebar .location {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.profile-links {
+    margin-top: 1.5rem;
     display: flex;
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.button:hover {
-    background-color: #ef744b;
-}
-
-.button:active {
-    background-color: #A9A9A9;
-    color: #888888;
-}
-
-.socials {
-    padding-bottom: 200px;
-}
-
-.logo {
-    height: 80px;
-    margin: 30px;
-}
-
-.twitter {
-    width: 50px;
-    height: 50px;
-}
-
-.github{
-    width: 50px;
-    height: 50px;
-}
-
-.linkedin{
-    width: 50px;
-    height: 50px;
-}
-
-.sub-section {
-    display: flex;
-    justify-content: space-around;
-    padding: 80px;
-}
-
-.sub-section-alternative {
-    display: flex;    
     flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profile-links a {
     text-align: center;
-    padding: 80px;
+    padding: 0.5rem;
+    background: #f1f3f5;
+    color: #333;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s;
 }
 
-.headshot {
-    width: 300px;
-    border-radius: 150px;
-    margin-left: 80px;
+.profile-links a:hover {
+    background: #e2e6ea;
 }
 
-.headshot-container {
-    display: flex;
-    align-items: center;
+.cv-download {
+    margin-top: 1.5rem;
 }
 
-.project-card {
-    width: 300px;
-    height: 500px;
-    box-shadow: 5px 5px 20px rgb(197, 195, 195);
-    margin: 10px;
+.btn-download {
+    display: block;
+    text-align: center;
+    background: #0066cc;
+    color: white;
+    padding: 0.7rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
-.project-container {
-      display: flex;
-      justify-content: space-around;
+.btn-download:hover {
+    background: #0052a3;
 }
 
-@media only screen and (max-width: 1000px) {
-    .project-container {
-        display: flex;
-        flex-wrap: wrap;
-    }
+/* Content Section Styles */
+.content-section {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
 }
 
-.project-image {
-    width: 250px;
-    border-radius: 125px;
-    margin-top: 25px;
+.content-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.content-header .subtitle {
+    color: #666;
+    margin-bottom: 1.5rem;
 }
 
 hr {
-    margin-left: 20px;
-    margin-right: 20px;   
+    border: 0;
+    border-top: 1px solid #eaeaea;
+    margin-bottom: 2rem;
 }
 
-.project-link {
-     text-decoration: none;
-     color: #ef744b;
+.cv-block {
+    margin-bottom: 2rem;
 }
 
-a {
-    text-decoration: none;
-    color: white;
+.cv-block h3 {
+    font-size: 1.25rem;
+    color: #222;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f1f3f5;
+    padding-bottom: 0.3rem;
 }
 
-.hamburger {
-    display: none;
+.cv-block ul {
+    list-style-type: disc;
+    padding-left: 1.2rem;
 }
 
-.hamburger:focus {
-    outline: 0;
+.cv-block li {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
 }
 
-@media only screen and (max-width: 1000px) {
-    .hamburger {
-        display: block;
-        border: 0;
-        background-color: transparent;
-        color: white;
-        font-size: 30px;
-        margin: 20px;
-        align-self: flex-end;
-    }
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 2rem;
+    color: #777;
+    font-size: 0.85rem;
+    border-top: 1px solid #eaeaea;
+    margin-top: 3rem;
+}
 
-    ul {
-        display: none;
-        background-color:#2b2c38;
-        margin: 0px;
-    }
-
-    ul.show {
-        display: block;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column-reverse;
-        background-color: #2b2c38;
-    }
-
-    .logo {
-        display: none;
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .main-layout {
+        grid-template-columns: 1fr;
     }
 }
